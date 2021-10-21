@@ -1,1 +1,18 @@
+ Write an Infrastructure as code using terraform, which automatically create a VPC.
+ In that VPC we have to create 2 subnets:
 
+  a.  public subnet 
+
+  b.  private subnet 
+ Create a public facing internet gateway for connect our VPC/Network to the internet world and attach this gateway to our VPC.
+
+ Create a routing table for Internet gateway so that instance can connect to outside world, update and associate it with public subnet.
+ Update the routing table of the private subnet, so that to access the internet it uses the nat gateway created in the public subnet
+ Launch a web server into the Public subnet
+ Launch a database server into the Private subnet
+Log into the webserver and ping google.com. You should get a response.
+ping google.com
+ Next try and ping the database server. You should get response too.
+ping 10.0.2.5
+Create a NAT gateway for connect our VPC/Network to the internet world and attach this gateway to our VPC in the public network
+Now try and ping google.com from your database server. 
